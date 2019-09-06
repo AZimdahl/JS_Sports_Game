@@ -1,4 +1,4 @@
-(function (){    
+(function (){        
     let teamOneStats = {
         numShots: document.querySelector("#teamone-numshots"),
         numHits: document.querySelector("#teamone-numhits"),
@@ -15,6 +15,8 @@
 
     let resetButton = document.querySelector("#reset");
     let resetCount = document.querySelector("#num-resets");
+    
+    let scoreSFX = document.querySelector("audio");
 
     function handleShot(team) {
         console.log(team);
@@ -25,6 +27,8 @@
         if (team.teamAvg >= shotRand) {
             newScore++;
             team.numHits.innerHTML = newScore;
+
+            scoreSFX.play();
         }
 
         shotCount++;
